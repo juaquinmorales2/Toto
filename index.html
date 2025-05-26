@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Toto Futbol
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Roboto:wght@400&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #030313;
+      color: white;
+      overflow-y: scroll;
+    }
+    .font-anton {
+      font-family: 'Anton', sans-serif;
+    }
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #030313;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: #f3703f;
+      border-radius: 10px;
+    }
+    .stroke-2 {
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: #f3703f;
+      color: transparent;
+    }
+  </style>
+ </head>
+ <body class="relative min-h-screen flex flex-col">
+  <!-- Left vertical social icons and line -->
+  <div class="fixed top-1/2 left-4 -translate-y-1/2 flex flex-col items-center space-y-6 z-30">
+   <div class="w-[1px] h-20 bg-[#f3703f]">
+   </div>
+   <a aria-label="Facebook" class="text-white text-xl hover:text-[#f3703f] transition" href="#">
+    <i class="fab fa-facebook-f">
+    </i>
+   </a>
+   <a aria-label="Twitter" class="text-white text-xl hover:text-[#f3703f] transition" href="#">
+    <i class="fab fa-twitter">
+    </i>
+   </a>
+   <a aria-label="Instagram" class="text-white text-xl hover:text-[#f3703f] transition" href="#">
+    <i class="fab fa-instagram">
+    </i>
+   </a>
+  </div>
+  <!-- Top navigation bar -->
+  <nav class="fixed top-0 left-0 right-0 z-40 flex items-center justify-between bg-transparent px-6 py-4">
+   <div class="flex items-center space-x-3">
+    <a class="flex items-center space-x-2" href="https://www.fabrizioromano.org">
+     <img alt="TOTO Futbol" class="w-10 h-10 object-contain" height="40" src="https://storage.googleapis.com/a1aa/image/6fc56cee-1ff3-42f2-5f23-60299c1bc0c9.jpg" width="40"/>
+    </a>
+   </div>
+   <ul class="hidden md:flex space-x-8 text-white font-semibold text-sm tracking-wide">
+    <li>
+     <a class="hover:text-[#f3703f]" href="#">
+      Home
+     </a>
+    </li>
+    <li>
+     <a class="hover:text-[#f3703f]" href="#">
+      Football Transfers
+     </a>
+    </li>
+    <li>
+     <a class="hover:text-[#f3703f]" href="#">
+      Blog
+     </a>
+    </li>
+    <li>
+     <a class="hover:text-[#f3703f]" href="#">
+      About Us
+     </a>
+    </li>
+    <li>
+     <a class="hover:text-[#f3703f]" href="#">
+      Contact Us
+     </a>
+    </li>
+   </ul>
+   <div class="hidden md:flex space-x-4 text-white text-lg">
+    <a aria-label="Facebook" class="hover:text-[#f3703f]" href="#">
+     <i class="fab fa-facebook-f">
+     </i>
+    </a>
+    <a aria-label="Twitter" class="hover:text-[#f3703f]" href="#">
+     <i class="fab fa-twitter">
+     </i>
+    </a>
+    <a aria-label="Instagram" class="hover:text-[#f3703f]" href="#">
+     <i class="fab fa-instagram">
+     </i>
+    </a>
+   </div>
+  </nav>
+  <!-- Main content container -->
+  <main class="flex flex-col md:flex-row flex-1 pt-20 relative z-10">
+   <!-- Left text block -->
+   <section class="flex flex-col justify-center px-6 md:px-16 lg:px-24 xl:px-32 2xl:px-40 max-w-full md:max-w-[50%] text-white z-10">
+    <h1 class="font-anton text-[5.5rem] md:text-[7rem] leading-[1] tracking-wide stroke-2 select-none mb-5">
+     FABRIZIO
+    </h1>
+    <h2 class="font-anton text-[3.5rem] md:text-[4.5rem] leading-[1] tracking-wide stroke-2 select-none -mt-6">
+     ROMANO
+    </h2>
+    <h3 class="font-anton text-4xl md:text-5xl font-extrabold text-white mt-4 select-none">
+     EXCLUSIVE
+    </h3>
+    <p class="mt-4 max-w-md text-sm md:text-base font-normal leading-relaxed">
+     Discover the latest football transfer updates, breaking news, and top stories, plus catch up on thrilling match highlights.
+    </p>
+    <button aria-label="Here we go button" class="mt-8 bg-[#f3703f] text-white font-semibold text-xs uppercase tracking-widest px-6 py-3 flex items-center space-x-2 hover:bg-[#e05a2a] transition rounded-sm w-max">
+     <span>
+      Here we go!
+     </span>
+     <i class="fas fa-chevron-right">
+     </i>
+    </button>
+   </section>
+   <!-- Right images block -->
+   <section class="relative flex-1 flex overflow-hidden z-0">
+    <img alt="Man in light blue shirt looking to the left side, half visible" class="object-cover w-1/2" height="600" src="https://storage.googleapis.com/a1aa/image/8b242247-314f-499c-18b3-aa3558091e3c.jpg" width="400"/>
+    <img alt="Man in light blue shirt talking on phone looking right side" class="object-cover w-1/2" height="600" src="https://storage.googleapis.com/a1aa/image/9dfd0eee-281f-4acc-d312-b1094e520e2c.jpg" width="400"/>
+    <div class="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-r from-[#f3703f] to-transparent">
+    </div>
+   </section>
+  </main>
+  <!-- Additional sections -->
+  <section class="bg-[#0a0a23] py-16 px-6 md:px-16 lg:px-24 xl:px-32 2xl:px-40 text-white">
+   <h2 class="font-anton text-4xl md:text-5xl mb-8 border-l-4 border-[#f3703f] pl-4">
+    Latest Transfers
+   </h2>
+   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+    <article class="bg-[#121232] p-6 rounded-md shadow-lg">
+     <img alt="Football player celebrating with fans in stadium" class="w-full h-48 object-cover rounded-md mb-4" height="300" src="https://storage.googleapis.com/a1aa/image/0479b268-06e3-4350-039b-1aecc2162f63.jpg" width="400"/>
+     <h3 class="font-semibold text-lg mb-2">
+      Player A joins Club X
+     </h3>
+     <p class="text-sm leading-relaxed">
+      Official confirmation of Player A's transfer to Club X for the upcoming season.
+     </p>
+    </article>
+    <article class="bg-[#121232] p-6 rounded-md shadow-lg">
+     <img alt="Football player signing contract at desk" class="w-full h-48 object-cover rounded-md mb-4" height="300" src="https://storage.googleapis.com/a1aa/image/5bd975f1-6bd6-4456-bcc4-3b70b56b5ee5.jpg" width="400"/>
+     <h3 class="font-semibold text-lg mb-2">
+      Player B signs new deal
+     </h3>
+     <p class="text-sm leading-relaxed">
+      Player B extends contract with Club Y, securing his future for the next 3 years.
+     </p>
+    </article>
+    <article class="bg-[#121232] p-6 rounded-md shadow-lg">
+     <img alt="Football player training on field" class="w-full h-48 object-cover rounded-md mb-4" height="300" src="https://storage.googleapis.com/a1aa/image/93b85f09-54cf-478b-4487-3b481187765b.jpg" width="400"/>
+     <h3 class="font-semibold text-lg mb-2">
+      Player C back in training
+     </h3>
+     <p class="text-sm leading-relaxed">
+      After injury, Player C resumes training and is expected to return soon.
+     </p>
+    </article>
+   </div>
+  </section>
+  <section class="bg-[#030313] py-16 px-6 md:px-16 lg:px-24 xl:px-32 2xl:px-40 text-white">
+   <h2 class="font-anton text-4xl md:text-5xl mb-8 border-l-4 border-[#f3703f] pl-4">
+    Blog Highlights
+   </h2>
+   <div class="space-y-12 max-w-4xl mx-auto">
+    <article>
+     <h3 class="font-semibold text-2xl mb-2 hover:text-[#f3703f] cursor-pointer">
+      The Impact of Transfer Rumors on Player Performance
+     </h3>
+     <p class="text-sm leading-relaxed">
+      Explore how transfer rumors affect players' mental and physical performance on the pitch.
+     </p>
+    </article>
+    <article>
+     <h3 class="font-semibold text-2xl mb-2 hover:text-[#f3703f] cursor-pointer">
+      Top 5 Transfers That Changed Football History
+     </h3>
+     <p class="text-sm leading-relaxed">
+      A look back at the most influential transfers and their impact on clubs and fans worldwide.
+     </p>
+    </article>
+    <article>
+     <h3 class="font-semibold text-2xl mb-2 hover:text-[#f3703f] cursor-pointer">
+      Behind the Scenes: How Transfers Are Negotiated
+     </h3>
+     <p class="text-sm leading-relaxed">
+      An insider's view on the complex negotiations and strategies behind football transfers.
+     </p>
+    </article>
+   </div>
+  </section>
+  <section class="bg-[#0a0a23] py-16 px-6 md:px-16 lg:px-24 xl:px-32 2xl:px-40 text-white">
+   <h2 class="font-anton text-4xl md:text-5xl mb-8 border-l-4 border-[#f3703f] pl-4">
+    Contact Us
+   </h2>
+   <form action="#" class="max-w-3xl mx-auto space-y-6" method="POST">
+    <div>
+     <label class="block mb-2 text-sm font-semibold" for="name">
+      Name
+     </label>
+     <input class="w-full px-4 py-3 rounded-md bg-[#121232] border border-[#f3703f] focus:outline-none focus:ring-2 focus:ring-[#f3703f]" id="name" name="name" placeholder="Your full name" required="" type="text"/>
+    </div>
+    <div>
+     <label class="block mb-2 text-sm font-semibold" for="email">
+      Email
+     </label>
+     <input class="w-full px-4 py-3 rounded-md bg-[#121232] border border-[#f3703f] focus:outline-none focus:ring-2 focus:ring-[#f3703f]" id="email" name="email" placeholder="you@example.com" required="" type="email"/>
+    </div>
+    <div>
+     <label class="block mb-2 text-sm font-semibold" for="message">
+      Message
+     </label>
+     <textarea class="w-full px-4 py-3 rounded-md bg-[#121232] border border-[#f3703f] focus:outline-none focus:ring-2 focus:ring-[#f3703f]" id="message" name="message" placeholder="Write your message here..." required="" rows="5"></textarea>
+    </div>
+    <button class="bg-[#f3703f] text-white font-semibold text-xs uppercase tracking-widest px-6 py-3 flex items-center space-x-2 hover:bg-[#e05a2a] transition rounded-sm" type="submit">
+     <span>
+      Send Message
+     </span>
+     <i class="fas fa-paper-plane">
+     </i>
+    </button>
+   </form>
+  </section>
+  <footer class="bg-[#030313] text-white text-center py-6 text-xs">
+   © 2024 Fabrizio Romano. All rights reserved.
+  </footer>
+ </body>
+</html>
+
+
