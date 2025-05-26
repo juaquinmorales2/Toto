@@ -5,15 +5,23 @@
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <title>
    Toto Futbol
-  </title>
+  </title> 
   <script src="https://cdn.tailwindcss.com">
   </script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Roboto:wght@400&amp;display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="/main.js" ></script>
   <style>
    body {
       font-family: 'Roboto', sans-serif;
-      background-color: #030313;
+      background-color: #000000;
       color: white;
       overflow-y: scroll;
     }
@@ -27,217 +35,661 @@
       background: #030313;
     }
     ::-webkit-scrollbar-thumb {
-      background-color: #f3703f;
+      background-color: #474747;
       border-radius: 10px;
     }
     .stroke-2 {
       -webkit-text-stroke-width: 2px;
-      -webkit-text-stroke-color: #f3703f;
+      -webkit-text-stroke-color: #484848;
       color: transparent;
+    }
+     @keyframes fadeInSlide {
+      0% {
+        opacity: 0;
+        transform: translateX(-50%);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .animate-fade-in-slide {
+      animation: fadeInSlide 1s ease-out forwards;
     }
   </style>
  </head>
  <body class="relative min-h-screen flex flex-col">
-  <!-- Left vertical social icons and line -->
-  <div class="fixed top-1/2 left-4 -translate-y-1/2 flex flex-col items-center space-y-6 z-30">
-   <div class="w-[1px] h-20 bg-[#f3703f]">
-   </div>
-   <a aria-label="Facebook" class="text-white text-xl hover:text-[#f3703f] transition" href="#">
-    <i class="fab fa-facebook-f">
-    </i>
-   </a>
-   <a aria-label="Twitter" class="text-white text-xl hover:text-[#f3703f] transition" href="#">
-    <i class="fab fa-twitter">
-    </i>
-   </a>
-   <a aria-label="Instagram" class="text-white text-xl hover:text-[#f3703f] transition" href="#">
-    <i class="fab fa-instagram">
-    </i>
-   </a>
+     <!-- Top navigation bar -->
+  <nav class="hidden md:flex fixed top-7 left-1/2 items-center -translate-x-1/2 w-[90%] max-w-6xl z-40 border border-[#333846] backdrop-blur-md px-4 py-2 h-23 md:h-23 lg:h-24 xl:h-28">
+  <div class="flex flex-wrap items-center  justify-between w-full h-full">
+    <!-- Logo -->
+    <a class="flex items-center space-x-2 shrink-0" href="https://www.fabrizioromano.org">
+      <img alt="TOTO Futbol" class="w-20 h-auto object-contain" src="/assets/Logo.png" />
+    </a>
+
+    <!-- Menú -->
+    <ul class="flex flex-wrap justify-center flex-1 space-x-6 xl:space-x-10 text-white font-semibold text-sm tracking-wide min-w-[300px]">
+      <li><a class="hover:text-[#474747]" href="#">Inicio</a></li>
+      <li><a class="hover:text-[#474747]" href="#noticias-section">Noticias</a></li>
+      <li><a class="hover:text-[#474747]" href="#podcasts-section">Podcasts</a></li>
+      <li><a class="hover:text-[#474747]" href="#about-section">Sobre Mi</a></li>
+      <li><a class="hover:text-[#474747]" href="#contact-section">Contactame</a></li>
+    </ul>
+
+    <!-- Redes -->
+    <div class="flex items-center space-x-4 text-white text-lg shrink-0">
+      <a aria-label="YouTube" class="hover:text-[#474747]" href="https://www.youtube.com/@totoofutbol"><i class="fab fa-youtube"></i></a>
+      <a aria-label="Spotify" class="hover:text-[#474747]" href="https://open.spotify.com/show/2LZ5NsbrNShoj9JzLWbMPQ"><i class="fab fa-spotify"></i></a>
+      <a aria-label="Instagram" class="hover:text-[#474747]" href="https://www.instagram.com/totoofutbol/?__pwa=1"><i class="fab fa-instagram"></i></a>
+    </div>
   </div>
-  <!-- Top navigation bar -->
-  <nav class="fixed top-0 left-0 right-0 z-40 flex items-center justify-between bg-transparent px-6 py-4">
-   <div class="flex items-center space-x-3">
-    <a class="flex items-center space-x-2" href="https://www.fabrizioromano.org">
-     <img alt="TOTO Futbol" class="w-10 h-10 object-contain" height="40" src="https://storage.googleapis.com/a1aa/image/6fc56cee-1ff3-42f2-5f23-60299c1bc0c9.jpg" width="40"/>
+</nav>
+
+<!-- Main content container -->
+<main class="flex flex-col md:flex-row h-screen relative z-10">
+  <!-- Redes sociales solo visibles en md+ -->
+  <div class="relative top-[25%] left-4 flex flex-col items-center space-y-6 z-30 hidden md:flex">
+    <div class="w-[1px] h-20 bg-[#474747]"></div>
+    <a aria-label="YouTube" class="text-white text-xl hover:text-[#474747] transition" href="https://www.youtube.com/@totoofutbol">
+      <i class="fab fa-youtube"></i>
     </a>
-   </div>
-   <ul class="hidden md:flex space-x-8 text-white font-semibold text-sm tracking-wide">
-    <li>
-     <a class="hover:text-[#f3703f]" href="#">
-      Home
-     </a>
-    </li>
-    <li>
-     <a class="hover:text-[#f3703f]" href="#">
-      Football Transfers
-     </a>
-    </li>
-    <li>
-     <a class="hover:text-[#f3703f]" href="#">
-      Blog
-     </a>
-    </li>
-    <li>
-     <a class="hover:text-[#f3703f]" href="#">
-      About Us
-     </a>
-    </li>
-    <li>
-     <a class="hover:text-[#f3703f]" href="#">
-      Contact Us
-     </a>
-    </li>
-   </ul>
-   <div class="hidden md:flex space-x-4 text-white text-lg">
-    <a aria-label="Facebook" class="hover:text-[#f3703f]" href="#">
-     <i class="fab fa-facebook-f">
-     </i>
+    <a aria-label="Spotify" class="text-white text-xl hover:text-[#474747] transition" href="https://open.spotify.com/show/2LZ5NsbrNShoj9JzLWbMPQ">
+      <i class="fab fa-spotify"></i>
     </a>
-    <a aria-label="Twitter" class="hover:text-[#f3703f]" href="#">
-     <i class="fab fa-twitter">
-     </i>
+    <a aria-label="Instagram" class="text-white text-xl hover:text-[#474747] transition" href="https://www.instagram.com/totoofutbol/?__pwa=1">
+      <i class="fab fa-instagram"></i>
     </a>
-    <a aria-label="Instagram" class="hover:text-[#f3703f]" href="#">
-     <i class="fab fa-instagram">
-     </i>
-    </a>
-   </div>
-  </nav>
-  <!-- Main content container -->
-  <main class="flex flex-col md:flex-row flex-1 pt-20 relative z-10">
-   <!-- Left text block -->
-   <section class="flex flex-col justify-center px-6 md:px-16 lg:px-24 xl:px-32 2xl:px-40 max-w-full md:max-w-[50%] text-white z-10">
-    <h1 class="font-anton text-[5.5rem] md:text-[7rem] leading-[1] tracking-wide stroke-2 select-none mb-5">
-     FABRIZIO
-    </h1>
-    <h2 class="font-anton text-[3.5rem] md:text-[4.5rem] leading-[1] tracking-wide stroke-2 select-none -mt-6">
-     ROMANO
-    </h2>
-    <h3 class="font-anton text-4xl md:text-5xl font-extrabold text-white mt-4 select-none">
-     EXCLUSIVE
-    </h3>
-    <p class="mt-4 max-w-md text-sm md:text-base font-normal leading-relaxed">
-     Discover the latest football transfer updates, breaking news, and top stories, plus catch up on thrilling match highlights.
-    </p>
-    <button aria-label="Here we go button" class="mt-8 bg-[#f3703f] text-white font-semibold text-xs uppercase tracking-widest px-6 py-3 flex items-center space-x-2 hover:bg-[#e05a2a] transition rounded-sm w-max">
-     <span>
-      Here we go!
-     </span>
-     <i class="fas fa-chevron-right">
-     </i>
-    </button>
-   </section>
-   <!-- Right images block -->
-   <section class="relative flex-1 flex overflow-hidden z-0">
-    <img alt="Man in light blue shirt looking to the left side, half visible" class="object-cover w-1/2" height="600" src="https://storage.googleapis.com/a1aa/image/8b242247-314f-499c-18b3-aa3558091e3c.jpg" width="400"/>
-    <img alt="Man in light blue shirt talking on phone looking right side" class="object-cover w-1/2" height="600" src="https://storage.googleapis.com/a1aa/image/9dfd0eee-281f-4acc-d312-b1094e520e2c.jpg" width="400"/>
-    <div class="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-r from-[#f3703f] to-transparent">
+    <div class="w-[1px] h-20 bg-[#474747]"></div>
+  </div>
+
+  <!-- Sección izquierda: centrada en móvil, alineación original en md+ -->
+  <section class="relative flex flex-col justify-center items-center md:items-start text-center md:text-left px-6 md:px-16 lg:px-24 xl:px-32 2xl:px-40 w-full md:w-1/2 text-white z-10 h-screen md:h-full bg-cover bg-center bg-no-repeat md:bg-black"
+           style="background-image: url('/assets/toto2.jpg');">
+    <!-- Capa oscura sobre imagen -->
+    <div class="absolute inset-0 bg-black bg-opacity-70 md:bg-opacity-100"></div>
+    <!-- Contenido encima de overlay -->
+    <div class="relative z-10">
+      <style>
+        @keyframes fadeInDown { 0% { opacity: 0; transform: translateY(-30px);} 100% { opacity: 1; transform: translateY(0);} }
+        @keyframes pulseStroke { 0%,100% {-webkit-text-stroke: 1.5px white; text-stroke: 1.5px white;} 50% {-webkit-text-stroke: 2px white; text-stroke: 2px white;} }
+        .title-toto { color: transparent; -webkit-text-stroke: 1.5px white; text-stroke: 1.5px white; animation: fadeInDown 0.8s ease-out forwards, pulseStroke 3s ease-in-out infinite 0.8s; }
+        @keyframes fadeInRight { 0% { opacity: 0; transform: translateX(30px);} 100% { opacity: 1; transform: translateX(0);} }
+        @keyframes fadeInUp { 0% { opacity: 0; transform: translateY(20px);} 100% { opacity: 1; transform: translateY(0);} }
+        .animate-fadeInRight { animation: fadeInRight 0.7s ease-out 0.3s forwards; }
+        .animate-fadeInUp { animation: fadeInUp 0.6s ease-out 0.5s forwards; }
+        .btn-vermas { transition: all 0.3s ease; opacity: 0; animation: fadeInUp 0.6s ease-out 0.7s forwards; }
+        .btn-vermas:hover { transform: translateY(-3px); box-shadow: 0 4px 8px rgba(0,0,0,0.2); background-color: white; color: #474747; }
+        .btn-vermas:hover span, .btn-vermas:hover i { transform: translateX(4px); }
+        .btn-vermas span, .btn-vermas i { display: inline-block; transition: transform 0.2s ease; }
+        [class^="animate-"], [class*=" animate-"] { opacity: 0; }
+      </style>
+
+      <h1 class="font-anton text-[3.5rem] md:text-[6rem] leading-[1] tracking-wide select-none mb-4 md:mt-14 md:mb-7 title-toto">
+        TOTO
+      </h1>
+
+      <h2 class="font-anton text-[2rem] text-[#474747] md:text-[2rem] leading-[1] tracking-wide select-none -mt-4 animate-fadeInRight"
+          style="color: transparent; -webkit-text-stroke: 1.9px #474747;">
+        FUTBOL
+      </h2>
+
+      <p class="mt-4 max-w-md text-sm md:text-base font-normal leading-relaxed animate-fadeInUp">
+        Todo el soporte periodistico de Futbol Internacional, Futbol Uruguayo y del interior. Conoce las ultimas noticias, resultados y fichajes de tus equipos favoritos.
+      </p>
+
+      <button aria-label="Here we go button" class="btn-vermas mt-8 bg-[#474747] text-white font-semibold text-xs uppercase tracking-widest px-6 py-3 flex items-center space-x-2 rounded-sm w-max">
+        <a href="#noticias-section"><span>Ver Mas</span><i class="fas fa-chevron-right ml-2"></i></a>
+        
+      </button>
     </div>
-   </section>
-  </main>
+  </section>
+
+  <!-- Carrusel oculto en móviles -->
+  <section class="hidden md:flex relative w-full md:w-1/2 h-64 md:h-full">
+    <div class="relative w-full h-full">
+      <div class="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
+      <div class="absolute top-0 left-0 w-full h-32 md:h-64 bg-gradient-to-b from-black to-transparent z-10 pointer-events-none"></div>
+
+      <div class="swiper w-full h-full">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="/assets/toto2.jpg" alt="Man looking left" class="object-cover w-full h-full" />
+          </div>
+          <div class="swiper-slide">
+            <img src="/assets/toto1.jpg" alt="Man on phone" class="object-cover w-full h-full" />
+          </div>
+        </div>
+        <!-- Agrega tus controles de navegación de Swiper aquí si los usas -->
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<div class="romano-multidivider bg-white">
+    <div class="romano-track">
+        <span>NOTICIAS</span>
+        <span>ENTREVISTAS</span>
+        <span>RESULTADOS</span>
+        <span>OPINIONES</span>
+        <span>NOTICIAS </span>
+        <span>ENTREVISTAS</span>
+        <span>RESULTADOS</span>
+        <span>OPINIONES</span>
+        <span>NOTICIAS </span>
+        <span>ENTREVISTAS</span>
+        <span>ERESULTADOS</span>
+        <span>EOPINIONES</span>
+    </div>
+</div>
+
+
+<!-- Swiper.js scripts -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+  new Swiper('.swiper', {
+    loop: true,
+    effect: 'fade',
+    autoplay: {
+      delay: 6000,
+      disableOnInteraction: false,
+    },
+    speed: 2000,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
+</script>
+
   <!-- Additional sections -->
-  <section class="bg-[#0a0a23] py-16 px-6 md:px-16 lg:px-24 xl:px-32 2xl:px-40 text-white">
-   <h2 class="font-anton text-4xl md:text-5xl mb-8 border-l-4 border-[#f3703f] pl-4">
-    Latest Transfers
+  <section class="bg-gradient-to-b from-black to-[#474747] py-16 px-6 md:px-16 lg:px-24 xl:px-32 2xl:px-40 text-white" id="noticias-section">
+   <h2 class="font-anton text-4xl md:text-5xl mb-20 border-l-4 border-[#474747] pl-4 mb-20 titulo scroll-animate">
+    Informacion al instante
    </h2>
-   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-    <article class="bg-[#121232] p-6 rounded-md shadow-lg">
-     <img alt="Football player celebrating with fans in stadium" class="w-full h-48 object-cover rounded-md mb-4" height="300" src="https://storage.googleapis.com/a1aa/image/0479b268-06e3-4350-039b-1aecc2162f63.jpg" width="400"/>
-     <h3 class="font-semibold text-lg mb-2">
-      Player A joins Club X
-     </h3>
-     <p class="text-sm leading-relaxed">
-      Official confirmation of Player A's transfer to Club X for the upcoming season.
-     </p>
-    </article>
-    <article class="bg-[#121232] p-6 rounded-md shadow-lg">
-     <img alt="Football player signing contract at desk" class="w-full h-48 object-cover rounded-md mb-4" height="300" src="https://storage.googleapis.com/a1aa/image/5bd975f1-6bd6-4456-bcc4-3b70b56b5ee5.jpg" width="400"/>
-     <h3 class="font-semibold text-lg mb-2">
-      Player B signs new deal
-     </h3>
-     <p class="text-sm leading-relaxed">
-      Player B extends contract with Club Y, securing his future for the next 3 years.
-     </p>
-    </article>
-    <article class="bg-[#121232] p-6 rounded-md shadow-lg">
-     <img alt="Football player training on field" class="w-full h-48 object-cover rounded-md mb-4" height="300" src="https://storage.googleapis.com/a1aa/image/93b85f09-54cf-478b-4487-3b481187765b.jpg" width="400"/>
-     <h3 class="font-semibold text-lg mb-2">
-      Player C back in training
-     </h3>
-     <p class="text-sm leading-relaxed">
-      After injury, Player C resumes training and is expected to return soon.
-     </p>
-    </article>
-   </div>
-  </section>
-  <section class="bg-[#030313] py-16 px-6 md:px-16 lg:px-24 xl:px-32 2xl:px-40 text-white">
-   <h2 class="font-anton text-4xl md:text-5xl mb-8 border-l-4 border-[#f3703f] pl-4">
-    Blog Highlights
+   <!-- LightWidget WIDGET -->
+   <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+   <iframe 
+    src="//lightwidget.com/widgets/447a703788585a71a1de42e1e9397d36.html" 
+    scrolling="no" 
+    allowtransparency="true" 
+    class="lightwidget-widget scroll-animate" 
+    style="width:100%;border:0;overflow:hidden;background-color: rgb(255, 255, 255);padding: 20px;padding-bottom: 30px; border-radius: 5%; box-shadow: 0 0 10px 5px rgba(0,0,0,0.6);">
+   </iframe>
+</section>
+
+<style>
+  /* Estado inicial (antes de aparecer) */
+  .scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  
+  /* Estado final (cuando es visible) */
+  .scroll-animate.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Efecto hover para el widget */
+  .lightwidget-widget:hover {
+    animation: pulseGlow 2s infinite;
+  }
+  
+  @keyframes pulseGlow {
+    0% {
+      box-shadow: 0 0 10px 5px rgba(0,0,0,0.6);
+    }
+    50% {
+      box-shadow: 0 0 15px 7px rgba(255,255,255,0.3);
+    }
+    100% {
+      box-shadow: 0 0 10px 5px rgba(0,0,0,0.6);
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Configuración del Intersection Observer
+    const observerOptions = {
+      threshold: 0.1, // Se activa cuando el 10% del elemento es visible
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          // Opcional: dejar de observar después de la primera vez
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    
+    // Observar todos los elementos con la clase scroll-animate
+    const animatedElements = document.querySelectorAll('.scroll-animate');
+    animatedElements.forEach(el => observer.observe(el));
+  });
+</script>
+
+  <hr class="border-white border-t-2 rounded-full opacity-80 animate-fade-in-slide">
+
+  <section class="bg-black py-16 px-6 md:px-16 lg:px-24 xl:px-32 2xl:px-40 text-white" id="podcasts-section">
+   <h2 class="font-anton text-4xl md:text-5xl mb-8 border-l-4 border-[#1DB954] pl-4 scroll-animate-title mb-20">
+    Podcasts
    </h2>
-   <div class="space-y-12 max-w-4xl mx-auto">
-    <article>
-     <h3 class="font-semibold text-2xl mb-2 hover:text-[#f3703f] cursor-pointer">
-      The Impact of Transfer Rumors on Player Performance
-     </h3>
-     <p class="text-sm leading-relaxed">
-      Explore how transfer rumors affect players' mental and physical performance on the pitch.
-     </p>
-    </article>
-    <article>
-     <h3 class="font-semibold text-2xl mb-2 hover:text-[#f3703f] cursor-pointer">
-      Top 5 Transfers That Changed Football History
-     </h3>
-     <p class="text-sm leading-relaxed">
-      A look back at the most influential transfers and their impact on clubs and fans worldwide.
-     </p>
-    </article>
-    <article>
-     <h3 class="font-semibold text-2xl mb-2 hover:text-[#f3703f] cursor-pointer">
-      Behind the Scenes: How Transfers Are Negotiated
-     </h3>
-     <p class="text-sm leading-relaxed">
-      An insider's view on the complex negotiations and strategies behind football transfers.
-     </p>
-    </article>
-   </div>
-  </section>
-  <section class="bg-[#0a0a23] py-16 px-6 md:px-16 lg:px-24 xl:px-32 2xl:px-40 text-white">
-   <h2 class="font-anton text-4xl md:text-5xl mb-8 border-l-4 border-[#f3703f] pl-4">
-    Contact Us
+   <!-- CONTENEDOR PRINCIPAL -->
+<div class="relative overflow-hidden mt-20">
+  <!-- Carrusel -->
+  <div
+    id="carousel"
+    class="
+      flex gap-4
+      overflow-x-auto scroll-smooth snap-x snap-mandatory
+      px-4 py-2
+      scrollbar-hide
+    "
+  >
+    <!-- Cada tarjeta en un contenedor independiente -->
+    <div class="shrink-0 snap-center w-full sm:w-1/3">
+      <iframe
+        src="https://open.spotify.com/embed/episode/7i3yVQvjslcnM3k4zG1B8D"
+        width="100%"
+        height="380"
+        frameborder="0"
+        allowtransparency="true"
+        allow="encrypted-media"
+        class="rounded-lg"
+      ></iframe>
+    </div>
+
+    <div class="shrink-0 snap-center w-full sm:w-1/3">
+      <iframe
+        src="https://open.spotify.com/embed/episode/0gxt5VZ85OMpUpasuyyAf0"
+        width="100%"
+        height="380"
+        frameborder="0"
+        allowtransparency="true"
+        allow="encrypted-media"
+        class="rounded-lg"
+      ></iframe>
+    </div>
+
+    <div class="shrink-0 snap-center w-full sm:w-1/3">
+      <iframe
+        src="https://open.spotify.com/embed/episode/2boUb8BGG3ZVsUPeUq6Wmn"
+        width="100%"
+        height="380"
+        frameborder="0"
+        allowtransparency="true"
+        allow="encrypted-media"
+        class="rounded-lg"
+      ></iframe>
+    </div>
+
+    <div class="shrink-0 snap-center w-full sm:w-1/3">
+      <iframe
+        src="https://open.spotify.com/embed/episode/0VWyJBlrKGPxZTU9SB3r5M"
+        width="100%"
+        height="380"
+        frameborder="0"
+        allowtransparency="true"
+        allow="encrypted-media"
+        class="rounded-lg"
+      ></iframe>
+    </div>
+
+    <div class="shrink-0 snap-center w-full sm:w-1/3">
+      <iframe
+        src="https://open.spotify.com/embed/episode/4gGsePTPSsQFZUZtjcDI6v"
+        width="100%"
+        height="380"
+        frameborder="0"
+        allowtransparency="true"
+        allow="encrypted-media"
+        class="rounded-lg"
+      ></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- SCRIPT AUTO CARRUSEL -->
+<script>
+  (function () {
+    const carousel = document.getElementById("carousel");
+    let autoScrollId;
+
+    function scrollNext() {
+      const scrollWidth = carousel.scrollWidth;
+      const clientWidth = carousel.clientWidth;
+      const scrollLeft = carousel.scrollLeft;
+
+      if (scrollLeft + clientWidth >= scrollWidth - 5) {
+        // si llega al final, vuelve al inicio
+        carousel.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        carousel.scrollBy({ left: clientWidth, behavior: "smooth" });
+      }
+    }
+
+    function startAutoScroll() {
+      stopAutoScroll();
+      autoScrollId = setInterval(scrollNext, 7000); // 7 segundos
+    }
+
+    function stopAutoScroll() {
+      if (autoScrollId) clearInterval(autoScrollId);
+    }
+
+    // arrancamos auto-scroll
+    startAutoScroll();
+
+    // si hacen click en cualquier tarjeta, detenemos el carrusel
+    carousel.querySelectorAll("div").forEach((slide) => {
+      slide.addEventListener("click", () => {
+        stopAutoScroll();
+      });
+    });
+
+    // reinicia automatismo si quieres que reanude al cambiar de tamaño
+    window.addEventListener("resize", startAutoScroll);
+  })();
+</script>
+
+<!-- ESTILOS ADICIONALES -->
+<style>
+  /* Oculta la scrollbar */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Quita outline verde al hacer foco */
+  iframe:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+</style>
+   <div class="mt-6 flex justify-center">
+  <a
+    href="https://open.spotify.com/show/2LZ5NsbrNShoj9JzLWbMPQ"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-900 transition-colors text-white font-semibold px-4 py-2 rounded-full fadeInSlide"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 50 50" class="w-6 h-6 fill-white">
+      <path d="M25.009,1.982C12.322,1.982,2,12.304,2,24.991S12.322,48,25.009,48s23.009-10.321,23.009-23.009S37.696,1.982,25.009,1.982z M34.748,35.333c-0.289,0.434-0.765,0.668-1.25,0.668c-0.286,0-0.575-0.081-0.831-0.252C30.194,34.1,26,33,22.5,33.001 c-3.714,0.002-6.498,0.914-6.526,0.923c-0.784,0.266-1.635-0.162-1.897-0.948s0.163-1.636,0.949-1.897 c0.132-0.044,3.279-1.075,7.474-1.077C26,30,30.868,30.944,34.332,33.253C35.022,33.713,35.208,34.644,34.748,35.333z M37.74,29.193 c-0.325,0.522-0.886,0.809-1.459,0.809c-0.31,0-0.624-0.083-0.906-0.26c-4.484-2.794-9.092-3.385-13.062-3.35 c-4.482,0.04-8.066,0.895-8.127,0.913c-0.907,0.258-1.861-0.272-2.12-1.183c-0.259-0.913,0.272-1.862,1.184-2.12 c0.277-0.079,3.854-0.959,8.751-1c4.465-0.037,10.029,0.61,15.191,3.826C37.995,27.328,38.242,28.388,37.74,29.193z M40.725,22.013 C40.352,22.647,39.684,23,38.998,23c-0.344,0-0.692-0.089-1.011-0.275c-5.226-3.068-11.58-3.719-15.99-3.725 c-0.021,0-0.042,0-0.063,0c-5.333,0-9.44,0.938-9.481,0.948c-1.078,0.247-2.151-0.419-2.401-1.495 c-0.25-1.075,0.417-2.149,1.492-2.4C11.729,16.01,16.117,15,21.934,15c0.023,0,0.046,0,0.069,0 c4.905,0.007,12.011,0.753,18.01,4.275C40.965,19.835,41.284,21.061,40.725,22.013z"></path>
+    </svg>
+    Ver mas en Spotify
+  </a>
+</div>
+
+</section>
+
+<style>
+  /* Animación para el título */
+  .scroll-animate-title {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  /* Animación para el widget de Spotify */
+  .scroll-animate-widget {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.8s ease-out 0.3s, transform 0.8s ease-out 0.3s;
+  }
+  
+  /* Estado visible */
+  .section-visible .scroll-animate-title,
+  .section-visible .scroll-animate-widget {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  
+  /* Efecto hover para el reproductor */
+  .scroll-animate-widget:hover {
+    box-shadow: 0 0 15px 5px rgba(29, 185, 84, 0.3);
+    transition: box-shadow 0.3s ease;
+  }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const section = document.getElementById('podcasts-section');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('section-visible');
+        // Opcional: dejar de observar después de la animación
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.2, // Se activa cuando el 20% de la sección es visible
+    rootMargin: '0px 0px -50px 0px' // Margen negativo para activar un poco antes
+  });
+  
+  observer.observe(section);
+});
+</script>
+
+<hr class="border-white border-t-2 rounded-full opacity-80 animate-fade-in-slide">
+
+  <section class="bg-gradient-to-b from-black to-[#474747] py-16 px-6 md:px-16 lg:px-24 xl:px-32 2xl:px-40 text-white" id="about-section">
+  <h2 class="font-anton text-4xl md:text-5xl mb-8 border-l-4 border-[#474747] pl-4 scroll-title">
+    Sobre Mí
+  </h2>
+
+  <div class="flex flex-col md:flex-row items-center gap-8 mt-20">
+    <img 
+      src="/assets/toto1.jpg" 
+      alt="Foto del periodista" 
+      class="w-[400px] object-cover shadow-lg rounded-md scroll-image" 
+    />
+    
+    <p class="text-lg leading-relaxed md:leading-loose scroll-text">
+      Soy un periodista deportivo uruguayo apasionado por el fútbol. Desde muy chico me interesó analizar el juego y contar historias detrás de cada partido, jugador y club. Me esfuerzo por mantenerme actualizado y ofrecer una mirada crítica y objetiva del deporte que más amo.
+    </p>
+  </div>
+</section>
+
+<style>
+  /* Estado inicial (antes de aparecer) */
+  .scroll-title {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+  }
+  
+  .scroll-image {
+    opacity: 0;
+    transform: translateX(-30px) rotate(-3deg);
+    transition: all 0.8s ease-out 0.2s;
+  }
+  
+  .scroll-text {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.8s ease-out 0.4s;
+  }
+  
+  /* Estado final (cuando es visible) */
+  .section-in-view .scroll-title {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .section-in-view .scroll-image {
+    opacity: 1;
+    transform: translateX(0) rotate(0);
+  }
+  
+  .section-in-view .scroll-text {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  /* Efecto hover para la imagen */
+  .scroll-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+  }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const section = document.getElementById('about-section');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('section-in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -100px 0px'
+  });
+  
+  observer.observe(section);
+});
+</script>
+
+<hr class="border-white border-t-2 rounded-full opacity-80 animate-fade-in-slide">
+  
+  <section class="bg-gradient-to-b from-blue-400 to-black py-16 px-6 md:px-16 lg:px-24 xl:px-32 2xl:px-40 text-white" id="contact-section">
+   <h2 class="font-anton text-4xl md:text-5xl mb-8 border-l-4 border-black pl-4 scroll-contact-title">
+    Contactame
    </h2>
-   <form action="#" class="max-w-3xl mx-auto space-y-6" method="POST">
-    <div>
+   <form id="whatsappForm" class="max-w-3xl mx-auto space-y-6 scroll-contact-form mt-20 mb-5" method="POST">
+    <div class="scroll-form-field">
      <label class="block mb-2 text-sm font-semibold" for="name">
-      Name
+      Nombre
      </label>
-     <input class="w-full px-4 py-3 rounded-md bg-[#121232] border border-[#f3703f] focus:outline-none focus:ring-2 focus:ring-[#f3703f]" id="name" name="name" placeholder="Your full name" required="" type="text"/>
+     <input class="w-full px-4 py-3 rounded-md bg-black placeholder:text-white border border-white focus:outline-none focus:ring-2 focus:ring-black" id="name" name="name" placeholder="Ingresa Tu Nombre" required type="text"/>
     </div>
-    <div>
-     <label class="block mb-2 text-sm font-semibold" for="email">
-      Email
-     </label>
-     <input class="w-full px-4 py-3 rounded-md bg-[#121232] border border-[#f3703f] focus:outline-none focus:ring-2 focus:ring-[#f3703f]" id="email" name="email" placeholder="you@example.com" required="" type="email"/>
-    </div>
-    <div>
+    <div class="scroll-form-field">
      <label class="block mb-2 text-sm font-semibold" for="message">
-      Message
+      Mensaje
      </label>
-     <textarea class="w-full px-4 py-3 rounded-md bg-[#121232] border border-[#f3703f] focus:outline-none focus:ring-2 focus:ring-[#f3703f]" id="message" name="message" placeholder="Write your message here..." required="" rows="5"></textarea>
+     <textarea class="w-full px-4 py-3 rounded-md bg-black placeholder:text-white border border-white focus:outline-none focus:ring-2 focus:ring-black" id="message" name="message" placeholder="Ingresa Tu Mensaje..." required rows="5"></textarea>
     </div>
-    <button class="bg-[#f3703f] text-white font-semibold text-xs uppercase tracking-widest px-6 py-3 flex items-center space-x-2 hover:bg-[#e05a2a] transition rounded-sm" type="submit">
-     <span>
-      Send Message
-     </span>
-     <i class="fas fa-paper-plane">
-     </i>
+    <button type="submit" aria-label="Here we go button"
+            class="mt-8 bg-black text-white font-semibold text-xs uppercase tracking-widest px-6 py-3 flex items-center space-x-2 hover:bg-white hover:text-[#474747] transition rounded-sm w-max scroll-contact-btn">
+      <span>Enviar Mensaje</span>
+      <i class="fas fa-paper-plane"></i>
     </button>
    </form>
-  </section>
-  <footer class="bg-[#030313] text-white text-center py-6 text-xs">
-   © 2024 Fabrizio Romano. All rights reserved.
+</section>
+
+<style>
+  /* Animaciones de entrada (sin afectar estilos existentes) */
+  .scroll-contact-title {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+  }
+  
+  .scroll-contact-form {
+    opacity: 0;
+    transition: all 0.8s ease-out 0.2s;
+  }
+  
+  .scroll-form-field {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.5s ease-out;
+  }
+  
+  .scroll-form-field:nth-child(2) {
+    transition-delay: 0.3s;
+  }
+  
+  .scroll-contact-btn {
+    opacity: 0;
+    transition: all 0.5s ease-out 0.6s;
+  }
+  
+  /* Estado visible - solo animaciones */
+  .contact-visible .scroll-contact-title,
+  .contact-visible .scroll-contact-form,
+  .contact-visible .scroll-form-field,
+  .contact-visible .scroll-contact-btn {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+  }
+
+  /* Mantengo EXACTAMENTE tus efectos hover originales */
+  /* (Estos ya estaban en tu código original) */
+  button:hover {
+    background-color: white !important;
+    color: #474747 !important;
+    transition-duration: 0.2s;;
+  }
+  
+  /* Solo agrego una transición suave a la opacidad para las animaciones */
+  input, textarea, button {
+    transition-property: opacity, transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+  }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const contactSection = document.getElementById('contact-section');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('contact-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
+  
+  observer.observe(contactSection);
+});
+</script>
+
+<script>
+document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Obtener los valores del formulario
+    const name = document.getElementById('name').value;
+    const message = document.getElementById('message').value;
+    
+    const phoneNumber = '59892588653'; 
+    
+    const encodedMessage = encodeURIComponent(`Hola, soy ${name}.
+     ${message}`);
+    
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    
+    window.open(whatsappUrl, '_blank');
+    
+    this.reset();
+});
+</script>
+
+
+  <footer class="bg-gradient-to-b from-black to-black text-white text-center py-6 text-xs"><img src="/assets/vos.jpg" alt="Vos Marketing S.A" class="w-8 h-8 inline-block mr-2 rounded-full">
+   © 2024 <b>VOS Marketing S.A</b>. Todos los derechos reservados.
   </footer>
  </body>
 </html>
-
-

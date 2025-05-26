@@ -1,0 +1,27 @@
+.romano-multidivider {
+    width: 100%;
+    height: 38px;
+    overflow: hidden;
+    position: relative;
+}
+
+.romano-track {
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    white-space: nowrap;
+    gap: 80px; 
+}
+
+.romano-track span {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 18px;
+    color: #333;
+    background: white;
+    padding: 5px 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
